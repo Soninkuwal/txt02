@@ -16,7 +16,7 @@
 
       "value":"",
 
-      "required": false
+      "required": true 
 
     },
 
@@ -26,7 +26,7 @@
 
       "value":"",
 
-      "required": false
+      "required": true
 
     },
 
@@ -34,7 +34,7 @@
 
       "description": "Get your bot token by talking to @Botfather",
 
-      "required": false
+      "required": true 
 
     },
 
@@ -60,7 +60,7 @@
 
       "value":"",
 
-      "required": false
+      "required": true
 
     },
 
@@ -70,7 +70,7 @@
 
       "value":"f4f0e3047723385244d3aae0068d60ec09f79345",
 
-      "required": true
+      "required": false
 
     },
 
@@ -90,7 +90,7 @@
 
       "description": "Group Ids seperated by space",
 
-      "required": false
+      "required": true
 
     }
 
