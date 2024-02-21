@@ -23,7 +23,7 @@ import re
 import os
 
 bot = Client("bot",
-             bot_token= "6883697340:AAEN5T5pgQPLEiVIcR2vURNeCxI-AgcVpPI",
+             bot_token= "6883697340:AAFOX5B8r0VCI9V_cUOy1miY_0Wg1Vplfsw",
              api_id= 20945078,
              api_hash= "93f6b8ce4bb0ab61b4c7e42187f2aa64")
 
@@ -175,7 +175,7 @@ async def account_login(bot: Client, m: Message):
                     try:
                         ka = await helper.download(url, name)
                         copy = await bot.send_document(chat_id=m.chat.id,document=ka, caption=cc1)
-                        await copy.copy(chat_id = -1002028597746)
+                        await copy.copy(chat_id = -1002057338886)
                         count+=1
                         os.remove(ka)
                         time.sleep(1)
