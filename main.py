@@ -87,7 +87,7 @@ async def account_login(bot: Client, m: Message):
     else:
         b_name = raw_text0
 
-    await editable.edit("**Enter resolution**")
+    await editable.edit("**Enter resolution**\n\nExample 144,240,360,480,720,1080**")
     input2: Message = await bot.listen(editable.chat.id)
     raw_text2 = input2.text
     await input2.delete(True)
