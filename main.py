@@ -153,8 +153,8 @@ async def txt_handler(bot: Client, m: Message):
                 cmd = f'yt-dlp -f "{ytf}" "{url}" -o "{name}.mp4"'
 
             try:                               
-                cc = f'** {str(count).zfill(3)}.** {name1} ({res}) 🅘🅟🅢 🅛🅞🅥🅔🅡.mkv\n**🅑🅐🅣🅒🅗 🅝🅐🅜🅔 ➤** {b_name}\n\n**𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐄𝐃 𝐁𝐘 ➤ 🅘🅟🅢 🅛🅞🅥🅔🅡 @Chatkanhabot **'
-                cc1 = f'** {str(count).zfill(3)}.** {name1} 🅘🅟🅢 🅛🅞🅥🅔🅡.pdf \n**🅑🅐🅣🅒🅗 🅝🅐🅜🅔 ➤**{b_name}\n\n**𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐄𝐃 𝐁𝐘 ➤ 🅘🅟🅢 🅛🅞🅥🅔🅡 @Chatkanhabot **'
+                cc = f'** {str(count).zfill(3)}.** {name1} ({res}) 🅘🅟🅢 🅛🅞🅥🅔🅡.mkv\n\n**🅑🅐🅣🅒🅗 🅝🅐🅜🅔 ➤** {b_name}\n\n**𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐄𝐃 𝐁𝐘 ➤ 🅘🅟🅢 🅛🅞🅥🅔🅡 @Chatkanhabot **'
+                cc1 = f'** {str(count).zfill(3)}.** {name1} 🅘🅟🅢 🅛🅞🅥🅔🅡.pdf \n\n**🅑🅐🅣🅒🅗 🅝🅐🅜🅔 ➤**{b_name}\n\n**𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐄𝐃 𝐁𝐘 ➤ 🅘🅟🅢 🅛🅞🅥🅔🅡 @Chatkanhabot **'
                 if "drive" in url:
                     try:
                         ka = await helper.download(url, name)
@@ -215,7 +215,7 @@ async def txt_handler(bot: Client, m: Message):
 
               
                 else:
-                    prog = await m.reply_text(f"**Downloading:-**\n\n** Video Name :-** `{name}\nQuality - {raw_text2}`\n**🅑🅞🅣 🅜🅐🅓🅔 🅑🅨 🅺🅰🅽🅷🅰🅸🆈🅰 🅻🅰🅻 🅼🅴🅴🅽🅰 🅺🆄🆆🅰🅻 @Chatkanhabot**")
+                    prog = await m.reply_text(f"**Downloading:-**\n\n** Video Name :-** `{name}\n\nQuality - {raw_text2}`\n\n**🅑🅞🅣 🅜🅐🅓🅔 🅑🅨 🅺🅰🅽🅷🅰🅸🆈🅰 🅻🅰🅻 🅼🅴🅴🅽🅰 🅺🆄🆆🅰🅻 @Chatkanhabot**")
                     res_file = await helper.download_video(url, cmd, name)
                     filename = res_file
                     await prog.delete(True)
@@ -223,7 +223,7 @@ async def txt_handler(bot: Client, m: Message):
                     count += 1
 
             except Exception as e:
-                await m.reply_text(f"**This #Failed File is not Counted**\n**Name** =>> `{name}`\n**Link** =>> `{url}`\n\n ** fail reason »** {e}")
+                await m.reply_text(f"**This #Failed File is not Counted**\n\n**Name** =>> `{name}`\n\n**Link** =>> `{url}`\n\n ** fail reason »** {e}")
                 count += 1
                 continue
 
@@ -232,7 +232,7 @@ async def txt_handler(bot: Client, m: Message):
     await m.reply_text("🔰 👁️ JI MALIK KAAM DONE HO GAYA 👁️ 🔰")
 @bot.on_message(filters.command(["vpdf"])&(filters.chat(auth_users)))
 async def vision_pdf(bot: Client, m: Message):
-    editable = await m.reply_text("**Hello Dear,** I am Text File Downloader Bot.\nI can download **PDFs of vision** from text file one by one.\n\n**Developer: @Be4stX** \n**Language:** Python\n**Framework:** 🔥Pyrogram\n\nNow Send Your **TXT File:-**\n")
+    editable = await m.reply_text("**Hello Dear,** I am Text File Downloader Bot.\nI can download **PDFs of vision** from text file one by one.\n\n**Developer: 🅑🅞🅣 🅜🅐🅓🅔 🅑🅨 🅺🅰🅽🅷🅰🅸🆈🅰 🅻🅰🅻 🅼🅴🅴🅽🅰 🅺🆄🆆🅰🅻 @Chatkanhabot** \n\n**Language:** Python\n**Framework:** 🔥Pyrogram\n\nNow Send Your **TXT File:-**\n")
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
