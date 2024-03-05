@@ -178,6 +178,42 @@ async def txt_handler(bot: Client, m: Message):
                         await m.reply_text(str(e))
                         time.sleep(e.x)
                         continue
+
+
+                elif ".m3u8" in url:
+                   try:
+                       cmd = f'yt-dlp -o "{name}.m3u8" "{url}"'
+                       download_cmd = f"{cmd} -R 25 --fragment-retries 25"
+                       os.system(download_cmd)
+                       await bot.send_vid(chat_id=m.chat.id,vid=f'{name}.m3u8', caption=cc)
+                       count += 1
+                       os.remove(f'{name}.m3w8')
+                   except FloodWait as e:
+                       print(f"FloodWait Exception: {e}")
+                       await m.reply_text(str(e))
+                       time.sleep(e.x)
+                       continue
+                   except Exception as e:
+                       print(f"Exception: {e}")
+              
+
+                elif ".mp4" in url:
+                   try:
+                       cmd = f'yt-dlp -o "{name}.mp4" "{url}"'
+                       download_cmd = f"{cmd} -R 25 --fragment-retries 25"
+                       os.system(download_cmd)
+                       await bot.send_vid(chat_id=m.chat.id,vid=f'{name}.mp4', caption=cc)
+                       count += 1
+                       os.remove(f'{name}.mp4')
+                   except FloodWait as e:
+                       print(f"FloodWait Exception: {e}")
+                       await m.reply_text(str(e))
+                       time.sleep(e.x)
+                       continue
+                   except Exception as e:
+                       print(f"Exception: {e}")
+
+              
                 else:
                     prog = await m.reply_text(f"**Downloading:-**\n\n** Video Name :-** `{name}\nQuality - {raw_text2}`\n**🅑🅞🅣 🅜🅐🅓🅔 🅑🅨 🅺🅰🅽🅷🅰🅸🆈🅰 🅻🅰🅻 🅼🅴🅴🅽🅰 🅺🆄🆆🅰🅻 @Chatkanhabot**")
                     res_file = await helper.download_video(url, cmd, name)
