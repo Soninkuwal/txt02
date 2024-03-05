@@ -152,9 +152,11 @@ async def txt_handler(bot: Client, m: Message):
             else:
                 cmd = f'yt-dlp -f "{ytf}" "{url}" -o "{name}.mp4"'
 
-            try:                               
-                cc = f'** {str(count).zfill(3)}.** {name1} ({res}) 🅘🅟🅢 🅛🅞🅥🅔🅡.mkv\n\n**🅑🅐🅣🅒🅗 🅝🅐🅜🅔 ➤** {b_name}\n\n**𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐄𝐃 𝐁𝐘 ➤ 🅘🅟🅢 🅛🅞🅥🅔🅡 @Chatkanhabot **'
-                cc1 = f'** {str(count).zfill(3)}.** {name1} 🅘🅟🅢 🅛🅞🅥🅔🅡.pdf \n\n**🅑🅐🅣🅒🅗 🅝🅐🅜🅔 ➤**{b_name}\n\n**𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐄𝐃 𝐁𝐘 ➤ 🅘🅟🅢 🅛🅞🅥🅔🅡 @Chatkanhabot **'
+            try: 
+                cc = f'** {str(count).zfill(3)}.**{name1} ({res}) 🅘🅟🅢 🅛🅞🅥🅔🅡.mkv\n\n**🅑🅐🅣🅒🅗 🅝🅐🅜🅔 ➤** {b_name}\n\n**𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐄𝐃 𝐁𝐘 ➤ 🅘🅟🅢 🅛🅞🅥🅔🅡 @Chatkanhabot **'
+                cc1 = f'** {str(count).zfill(3)}.**{name1} ({res}) 🅘🅟🅢 🅛🅞🅥🅔🅡.mp4\n\n**🅑🅐🅣🅒🅗 🅝🅐🅜🅔 ➤** {b_name}\n\n**𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐄𝐃 𝐁𝐘 ➤ 🅘🅟🅢 🅛🅞🅥🅔🅡 @Chatkanhabot **'
+                cc2 = f'** {str(count).zfill(3)}.** {name1} ({res}) 🅘🅟🅢 🅛🅞🅥🅔🅡.m3u8\n\n**🅑🅐🅣🅒🅗 🅝🅐🅜🅔 ➤** {b_name}\n\n**𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐄𝐃 𝐁𝐘 ➤ 🅘🅟🅢 🅛🅞🅥🅔🅡 @Chatkanhabot **'
+                cc3 = f'** {str(count).zfill(3)}.** {name1} 🅘🅟🅢 🅛🅞🅥🅔🅡.pdf \n\n**🅑🅐🅣🅒🅗 🅝🅐🅜🅔 ➤**{b_name}\n\n**𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐄𝐃 𝐁𝐘 ➤ 🅘🅟🅢 🅛🅞🅥🅔🅡 @Chatkanhabot **'
                 if "drive" in url:
                     try:
                         ka = await helper.download(url, name)
@@ -171,7 +173,7 @@ async def txt_handler(bot: Client, m: Message):
                         cmd = f'yt-dlp -o "{name}.pdf" "{url}"'
                         download_cmd = f"{cmd} -R 25 --fragment-retries 25"
                         os.system(download_cmd)
-                        await bot.send_document(chat_id=m.chat.id, document=f'{name}.pdf', caption=cc1)
+                        await bot.send_document(chat_id=m.chat.id, document=f'{name}.pdf', caption=cc3)
                         count += 1
                         os.remove(f'{name}.pdf')
                     except FloodWait as e:
@@ -185,7 +187,7 @@ async def txt_handler(bot: Client, m: Message):
                        cmd = f'yt-dlp -o "{name}.m3u8" "{url}"'
                        download_cmd = f"{cmd} -R 25 --fragment-retries 25"
                        os.system(download_cmd)
-                       await bot.send_video(chat_id=m.chat.id, video=f'{name}.m3u8', caption=cc)
+                       await bot.send_video(chat_id=m.chat.id, video=f'{name}.m3u8', caption=cc2)
                        count += 1
                        os.remove(f'{name}.m3w8')
                    except FloodWait as e:
@@ -202,7 +204,7 @@ async def txt_handler(bot: Client, m: Message):
                        cmd = f'yt-dlp -o "{name}.mp4" "{url}"'
                        download_cmd = f"{cmd} -R 25 --fragment-retries 25"
                        os.system(download_cmd)
-                       await bot.send_video(chat_id=m.chat.id, video=f'{name}.mp4', caption=cc)
+                       await bot.send_video(chat_id=m.chat.id, video=f'{name}.mp4', caption=cc1)
                        count += 1
                        os.remove(f'{name}.mp4')
                    except FloodWait as e:
