@@ -202,14 +202,7 @@ async def txt_handler(bot: Client, m: Message):
                        print(download_cmd)
                        logging.info(download_cmd)
                        k = subprocess.run(download_cmd, shell=True)
-                       if "visionias" in cmd and k.returncode != 0 and failed_counter <= 10:
-                       
-                       
-                       
-                       
-                       
-                       if os.path.isfile(name):
-                       return name
+                     
                    elif os.path.isfile(f"{name}.webm"):
                        return f"{name}.webm"
                        name = name.split(".")[0]
