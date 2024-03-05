@@ -206,7 +206,7 @@ async def txt_handler(bot: Client, m: Message):
                        
                        
                        
-                       failed_counter = 0
+                       
                        try:
                        if os.path.isfile(name):
                        return name
