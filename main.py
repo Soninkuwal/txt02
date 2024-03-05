@@ -195,6 +195,22 @@ async def txt_handler(bot: Client, m: Message):
                        continue
                    except Exception as e:
                        print(f"Exception: {e}")
+
+                 elif ".mkv" in url:
+                   try:
+                       cmd = f'yt-dlp -o "{name}.mkv" "{url}"'
+                       download_cmd = f"{cmd} -R 25 --fragment-retries 25"
+                       os.system(download_cmd)
+                       await bot.send_video(chat_id=m.chat.id, video=f'{name}.mkv', caption=cc)
+                       count += 1
+                       os.remove(f'{name}.mkv')
+                   except FloodWait as e:
+                       print(f"FloodWait Exception: {e}")
+                       await m.reply_text(str(e))
+                       time.sleep(e.x)
+                       continue
+                   except Exception as e:
+                       print(f"Exception: {e}")
               
 
                 elif ".mp4" in url:
