@@ -207,7 +207,7 @@ async def txt_handler(bot: Client, m: Message):
                        
                        
                        
-                       try:
+                       
                        if os.path.isfile(name):
                        return name
                    elif os.path.isfile(f"{name}.webm"):
