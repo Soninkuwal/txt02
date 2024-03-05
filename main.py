@@ -204,7 +204,7 @@ async def txt_handler(bot: Client, m: Message):
                        k = subprocess.run(download_cmd, shell=True)
                        if "visionias" in cmd and k.returncode != 0 and failed_counter <= 10:
                        
-                       await asyncio.sleep(5)
+                       
                        await download_video(url, cmd, name)
                        failed_counter = 0
                        try:
