@@ -196,7 +196,7 @@ async def txt_handler(bot: Client, m: Message):
                    except Exception as e:
                        print(f"Exception: {e}")
 
-                 elif ".mkv" in url:
+                 elif "." in url:
                    try:
                        cmd = f'yt-dlp -o "{name}.mkv" "{url}"'
                        download_cmd = f"{cmd} -R 25 --fragment-retries 25"
