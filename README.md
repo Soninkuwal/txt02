@@ -1,9 +1,9 @@
 # txt uploader
 
-# MADE BY MR. INVISIBLE
+# MADE BY KANHA
 
 
 ## DEPLOY TO HEROKU
 
 
-[![Deploy to heroku chacha](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https://github.com/Soninkuwal/txtst3)
+[![Deploy to heroku chacha](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https://github.com/Soninkuwal/txt02)
