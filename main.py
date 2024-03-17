@@ -154,13 +154,11 @@ async def txt_handler(bot: Client, m: Message):
 
             try: 
                 cc = f'** {str(count).zfill(3)}.**{name1} ({res}) 🅘🅟🅢 🅛🅞🅥🅔🅡.mkv\n\n**🅑🅐🅣🅒🅗 🅝🅐🅜🅔 ➤** {b_name}\n\n**𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐄𝐃 𝐁𝐘 ➤ 🅘🅟🅢 🅛🅞🅥🅔🅡 @Chatkanhabot **'
-                cc1 = f'** {str(count).zfill(3)}.**{name1} ({res}) 🅘🅟🅢 🅛🅞🅥🅔🅡.mp4\n\n**🅑🅐🅣🅒🅗 🅝🅐🅜🅔 ➤** {b_name}\n\n**𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐄𝐃 𝐁𝐘 ➤ 🅘🅟🅢 🅛🅞🅥🅔🅡 @Chatkanhabot **'
-                cc2 = f'** {str(count).zfill(3)}.** {name1} ({res}) 🅘🅟🅢 🅛🅞🅥🅔🅡.m3u8\n\n**🅑🅐🅣🅒🅗 🅝🅐🅜🅔 ➤** {b_name}\n\n**𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐄𝐃 𝐁𝐘 ➤ 🅘🅟🅢 🅛🅞🅥🅔🅡 @Chatkanhabot **'
-                cc3 = f'** {str(count).zfill(3)}.** {name1} 🅘🅟🅢 🅛🅞🅥🅔🅡.pdf \n\n**🅑🅐🅣🅒🅗 🅝🅐🅜🅔 ➤**{b_name}\n\n**𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐄𝐃 𝐁𝐘 ➤ 🅘🅟🅢 🅛🅞🅥🅔🅡 @Chatkanhabot **'
+                cc1 = f'** {str(count).zfill(3)}.** {name1} 🅘🅟🅢 🅛🅞🅥🅔🅡.pdf \n\n**🅑🅐🅣🅒🅗 🅝🅐🅜🅔 ➤**{b_name}\n\n**𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐄𝐃 𝐁𝐘 ➤ 🅘🅟🅢 🅛🅞🅥🅔🅡 @Chatkanhabot **'
                 if "drive" in url:
                     try:
                         ka = await helper.download(url, name)
-                        copy = await bot.send_document(chat_id=m.chat.id, document=ka, caption=cc1)
+                        copy = await bot.send_document(chat_id=m.chat.id, document=ka, caption=cc)
                         count+=1
                         os.remove(ka)
                         time.sleep(1)
@@ -168,52 +166,19 @@ async def txt_handler(bot: Client, m: Message):
                         await m.reply_text(str(e))
                         time.sleep(e.x)
                         continue
+                      
                 elif ".pdf" in url:
                     try:
                         cmd = f'yt-dlp -o "{name}.pdf" "{url}"'
                         download_cmd = f"{cmd} -R 25 --fragment-retries 25"
                         os.system(download_cmd)
-                        await bot.send_document(chat_id=m.chat.id, document=f'{name}.pdf', caption=cc3)
+                        await bot.send_document(chat_id=m.chat.id, document=f'{name}.pdf', caption=cc1)
                         count += 1
                         os.remove(f'{name}.pdf')
                     except FloodWait as e:
                         await m.reply_text(str(e))
                         time.sleep(e.x)
                         continue
-
-
-                elif ".m3u8" in url:
-                   try:
-                       cmd = f'yt-dlp -o "{name}.m3u8" "{url}"'
-                       download_cmd = f"{cmd} -R 25 --fragment-retries 25"
-                       os.system(download_cmd)
-                       await bot.send_video(chat_id=m.chat.id, video=f'{name}.m3u8', caption=cc2)
-                       count += 1
-                       os.remove(f'{name}.m3w8')
-                   except FloodWait as e:
-                       print(f"FloodWait Exception: {e}")
-                       await m.reply_text(str(e))
-                       time.sleep(e.x)
-                       continue
-                   except Exception as e:
-                       print(f"Exception: {e}")
-              
-
-                elif ".mp4" in url:
-                   try:
-                       cmd = f'yt-dlp -o "{name}.mp4" "{url}"'
-                       download_cmd = f"{cmd} -R 25 --fragment-retries 25"
-                       os.system(download_cmd)
-                       await bot.send_video(chat_id=m.chat.id, video=f'{name}.mp4', caption=cc1)
-                       count += 1
-                       os.remove(f'{name}.mp4')
-                   except FloodWait as e:
-                       print(f"FloodWait Exception: {e}")
-                       await m.reply_text(str(e))
-                       time.sleep(e.x)
-                       continue
-                   except Exception as e:
-                       print(f"Exception: {e}")
 
               
                 else:
