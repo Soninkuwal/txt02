@@ -182,14 +182,12 @@ async def txt_handler(bot: Client, m: Message):
 
               
                 else:
-                    Show = f"**Downloading:-**\n\n** Video Name :-** `{name}\n\nQuality - {raw_text2}`\n\n**🅑🅞🅣 🅜🅐🅓🅔 🅑🅨 🅺🅰🅽🅷🅰🅸🆈🅰 🅻🅰🅻 🅼🅴🅴🅽🅰 🅺🆄🆆🅰🅻 @Chatkanhabot**"
-                    prog = await m.reply_text(Show)
+                    prog = await m.reply_text(f"**Downloading:-**\n\n** Video Name :-** `{name}\n\nQuality - {raw_text2}`\n\n** BOT MADE BY 🅺🅰🅽🅷🅰🅸🆈🅰 🅻🅰🅻 🅼🅴🅴🅽🅰 🅺🆄🆆🅰🅻 @Chatkanhabot**")
                     res_file = await helper.download_video(url, cmd, name)
                     filename = res_file
                     await prog.delete(True)
                     await helper.send_vid(bot, m, cc, filename, thumb, name)
                     count += 1
-                    time.sleep(1)
 
             except Exception as e:
                 await m.reply_text(f"**This #Failed File is not Counted**\n\n**Name** =>> `{name}`\n\n**Link** =>> `{url}`\n\n ** fail reason »** {e}")
