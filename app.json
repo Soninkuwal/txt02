@@ -14,7 +14,7 @@
 
       "description": "TG API_ID",
 
-      "value":"",
+      "value":"20945078",
 
       "required": false
 
@@ -24,7 +24,7 @@
 
       "description": "TG API HASH",
 
-      "value":"",
+      "value":"93f6b8ce4bb0ab61b4c7e42187f2aa64",
 
       "required": false
 
@@ -33,6 +33,8 @@
     "BOT_TOKEN": {
 
       "description": "Get your bot token by talking to @Botfather",
+
+      "value":"6298609764:AAHZWQcHTq5DlmRH1TvBCRE9_gxW_5UqXnk",
 
       "required": false
 
@@ -58,7 +60,7 @@
 
       "description": "who will use this bot",
 
-      "value":"",
+      "value":"1664376941",
 
       "required": false
 
@@ -86,7 +88,7 @@
 
     "GROUP_IDS": {
       
-      "value":"",
+      "value":"-1002026611663",
 
       "description": "Group Ids seperated by space",
 
