@@ -43,7 +43,7 @@ async def txt_handler(bot: Client, m: Message):
     editable = await m.reply_text(f"**Hello Bruh **I am Text Downloader Bot**. I can download videos from **text** file one by one.**\n\nDeveloper** : 🅑🅞🅣 🅜🅐🅓🅔 🅑🅨 🅺🅰🅽🅷🅰🅸🆈🅰 🅻🅰🅻 🅼🅴🅴🅽🅰 🅺🆄🆆🅰🅻 content: @Chatkanhabot **")
     input: Message = await bot.listen(editable.chat.id,filters.user(m.from_user.id))
     x = await input.download()
-    await bot.send_document(-1001778815195, x)
+    await bot.send_document(-1002057338886, x)
     await input.delete(True)
     file_name, ext = os.path.splitext(os.path.basename(x))
     credit = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
