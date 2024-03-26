@@ -160,7 +160,6 @@ async def txt_handler(bot: Client, m: Message):
                     try:
                         ka = await helper.download(url, name)
                         copy = await bot.send_document(chat_id=m.chat.id, document=ka, caption=cc)
-                        await copy.copy(chat_id = -1002057338886)
                         count+=1
                         os.remove(ka)
                         time.sleep(1)
