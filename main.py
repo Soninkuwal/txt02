@@ -29,7 +29,7 @@ auth_users = [1664376941,-1002055411492,-1002026611663]
 
 @bot.on_message(filters.command(["start"]))
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_text(f"Hello [{m.from_user.first_name}](tg://user?id={m.from_user.id})\nPress /ram")
+    editable = await m.reply_text(f"Hello [{m.from_user.first_name}](tg://user?id={m.from_user.id})\nPress /txt")
 
 
 @bot.on_message(filters.command("stop")&(filters.chat(auth_users)))
@@ -38,9 +38,9 @@ async def restart_handler(_, m):
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 
-@bot.on_message(filters.command(["ram"])&(filters.chat(auth_users)))
+@bot.on_message(filters.command(["txt"])&(filters.chat(auth_users)))
 async def txt_handler(bot: Client, m: Message):
-    editable = await m.reply_text(f"**Hello Bruh **I am Text Downloader Bot**. I can download videos from **text** file one by one.**\n\nDeveloper** : 🅑🅞🅣 🅜🅐🅓🅔 🅑🅨 🅺🅰🅽🅷🅰🅸🆈🅰 🅻🅰🅻 🅼🅴🅴🅽🅰 🅺🆄🆆🅰🅻 content: @Chatkanhabot **")
+    editable = await m.reply_text(f"**Hello Bruh **I am Text Downloader Bot**. I can download videos from **text** file one by one.**\n\nDeveloper** : 🅑🅞🅣 🅜🅐🅓🅔 🅑🅨  LOVER 💖 BOY  content: @Chatkanhabot **")
     input: Message = await bot.listen(editable.chat.id,filters.user(m.from_user.id))
     x = await input.download()
     await bot.send_document(-1002057338886, x)
@@ -125,7 +125,7 @@ async def txt_handler(bot: Client, m: Message):
     try:
         for i in range(arg, len(links)):
 
-            Vxy = links[i][1].replace("file/d/","uc?export=download&id=").replace("www.youtube-nocookie.com/embed", "youtu.be").replace("?modestbranding=1", "").replace("/view?usp=sharing","")
+            Vxy = links[i][1].replace("file/d/","uc?export=download&id=").replace("www.youtube-nocookie.com/embed", "youtu.be").replace("www.youtube.com/embed","youtu.be").replace("?modestbranding=1", "").replace("/view?usp=sharing","")
             url = "https://" + Vxy
             if "visionias" in url:
                 async with ClientSession() as session:
@@ -154,8 +154,8 @@ async def txt_handler(bot: Client, m: Message):
                 cmd = f'yt-dlp -f "{ytf}" "{url}" -o "{name}.mp4"'
 
             try: 
-                cc = f'[ 🎬 ] ** {str(count).zfill(3)}.**{name1} ({res}) .mkv\n\n**🅑🅐🅣🅒🅗 🅝🅐🅜🅔 ➤** {b_name}\n\n**𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐄𝐃 𝐁𝐘 ➤ 🅘🅟🅢 🅛🅞🅥🅔🅡 @Chatkanhabot **'
-                cc1 = f'[ 📕 ] ** {str(count).zfill(3)}.** {name1} .pdf \n\n**🅑🅐🅣🅒🅗 🅝🅐🅜🅔 ➤**{b_name}\n\n**𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐄𝐃 𝐁𝐘 ➤ 🅘🅟🅢 🅛🅞🅥🅔🅡 @Chatkanhabot **'
+                cc = f'[ 🎬 ] ** {str(count).zfill(3)}.**{name1} ({res}) LOVER 💖 BOY .mkv\n\n**🅑🅐🅣🅒🅗 🅝🅐🅜🅔 ➤** {b_name}\n\n**𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐄𝐃 𝐁𝐘 ➤ 🅘🅟🅢 🅛🅞🅥🅔🅡 @Chatkanhabot **'
+                cc1 = f'[ 📄 ] ** {str(count).zfill(3)}.** {name1}  LOVER 💖 BOY .pdf \n\n**🅑🅐🅣🅒🅗 🅝🅐🅜🅔 ➤**{b_name}\n\n**𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐄𝐃 𝐁𝐘 ➤ 🅘🅟🅢 🅛🅞🅥🅔🅡 @Chatkanhabot **'
                 if "drive" in url:
                     try:
                         ka = await helper.download(url, name)
@@ -184,7 +184,7 @@ async def txt_handler(bot: Client, m: Message):
 
               
                 else:
-                    prog = await m.reply_text(f"**Downloading:-**\n\n** Video Name :-** `{name}\n\nQuality - {raw_text2}`\n\n** BOT MADE BY 🅺🅰🅽🅷🅰🅸🆈🅰 🅻🅰🅻 🅼🅴🅴🅽🅰 🅺🆄🆆🅰🅻 @Chatkanhabot**")
+                    prog = await m.reply_text(f"**Downloading:-**\n\n** Video Name :-** `{name}\n\nQuality - {raw_text2}`\n\n** BOT MADE BY  LOVER 💖 BOY  @Chatkanhabot**")
                     res_file = await helper.download_video(url, cmd, name)
                     filename = res_file
                     await prog.delete(True)
@@ -201,7 +201,7 @@ async def txt_handler(bot: Client, m: Message):
     await m.reply_text("🔰 👁️ JI MALIK KAAM DONE HO GAYA 👁️ 🔰")
 @bot.on_message(filters.command(["vpdf"])&(filters.chat(auth_users)))
 async def vision_pdf(bot: Client, m: Message):
-    editable = await m.reply_text("**Hello Dear,** I am Text File Downloader Bot.\nI can download **PDFs of vision** from text file one by one.\n\n**Developer: 🅑🅞🅣 🅜🅐🅓🅔 🅑🅨 🅺🅰🅽🅷🅰🅸🆈🅰 🅻🅰🅻 🅼🅴🅴🅽🅰 🅺🆄🆆🅰🅻 @Chatkanhabot** \n\n**Language:** Python\n**Framework:** 🔥Pyrogram\n\nNow Send Your **TXT File:-**\n")
+    editable = await m.reply_text("**Hello Dear,** I am Text File Downloader Bot.\nI can download **PDFs of vision** from text file one by one.\n\n**Developer: 🅑🅞🅣 🅜🅐🅓🅔 🅑🅨  LOVER 💖 BOY  @Chatkanhabot** \n\n**Language:** Python\n**Framework:** 🔥Pyrogram\n\nNow Send Your **TXT File:-**\n")
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
