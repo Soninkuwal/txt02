@@ -8,7 +8,7 @@
 
 [![Deploy to heroku chacha](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https://github.com/Soninkuwal/txt02)
 
-## Variables
+# Variables
 
 - `API_ID`- 72629172
 - `API_HASH` - 726nwhsyw
@@ -16,7 +16,7 @@
 - `AUTH` - user id for example 1237727 & channel and group id for example -100×××××××
 -
 
-## Commands Available in Bot 
+# Commands Available in Bot 
 
 - ```start``` - to start the bot
 - ```txt``` - sand a txt file to download video 📸
