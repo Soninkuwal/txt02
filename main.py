@@ -184,7 +184,7 @@ async def txt_handler(bot: Client, m: Message):
 
               
                 else:
-                    prog = await m.reply_text(f"**Downloading:-**\n\n** Video Name :-** `{name}\n\nQuality - {raw_text2}`\n\n** BOT MADE BY  LOVER 💖 BOY  @Chatkanhabot**")
+                    prog = await m.reply_text(f"**Downloading:-**\n\n** Video Name :-** `{name}\n\nQuality - {raw_text2}`**")
                     res_file = await helper.download_video(url, cmd, name)
                     filename = res_file
                     await prog.delete(True)
