@@ -18,4 +18,4 @@ RUN mkdir /Soninkuwal
 WORKDIR /Soninkuwal
 
 # Running MessageSearchBot
-CMD ["python", "bot.py"]
+CMD ["python", "main.py"]
