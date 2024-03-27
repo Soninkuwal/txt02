@@ -96,6 +96,17 @@
 
     }
 
+    "AUTH_USER": {
+      
+      "value":"1664376941,-1002055411492,-1002026611663",
+
+      "description": "Group Ids seperated by space",
+
+      "required": false
+
+    }
+    
+
   },
 
   "formation": {
