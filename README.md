@@ -17,8 +17,9 @@
 -
 
 # Commands Available in Bot 
-
-- ```start``` - to start the bot
-- ```txt``` - sand a txt file to download video 📸
-- ```stop``` - to stop the onging /stop task
-- 
+```
+start - to start the bot
+txt - sand a txt file to download video 📸
+stop - to stop the onging /stop task
+vpdf - pdf version check 
+```
