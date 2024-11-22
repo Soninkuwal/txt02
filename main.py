@@ -22,10 +22,10 @@ import re
 import os
 
 bot = Client("bot",
-             bot_token= "6298609764:AAHZWQcHTq5DlmRH1TvBCRE9_gxW_5UqXnk",
-             api_id= 20945078,
-             api_hash= "93f6b8ce4bb0ab61b4c7e42187f2aa64",)
-auth_users = [1664376941,-1002055411492,-1002026611663]
+              api_id=API_ID,
+              api_hash=API_HASH,
+              bot_token=BOT_TOKEN)
+auth_users = [7841292070]
 
 @bot.on_message(filters.command(["start"]))
 async def account_login(bot: Client, m: Message):
@@ -43,7 +43,7 @@ async def txt_handler(bot: Client, m: Message):
     editable = await m.reply_text(f"**Hello Bruh **I am Text Downloader Bot**. I can download videos from **text** file one by one.**\n\nDeveloper** : 🅑🅞🅣 🅜🅐🅓🅔 🅑🅨  LOVER 💖 BOY  content: @Chatkanhabot **")
     input: Message = await bot.listen(editable.chat.id,filters.user(m.from_user.id))
     x = await input.download()
-    await bot.send_document(-1002057338886, x)
+    await bot.send_document(-1002397220814, x)
     await input.delete(True)
     file_name, ext = os.path.splitext(os.path.basename(x))
     credit = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
@@ -174,7 +174,7 @@ async def txt_handler(bot: Client, m: Message):
                         download_cmd = f"{cmd} -R 25 --fragment-retries 25"
                         os.system(download_cmd)
                         await bot.send_document(chat_id=m.chat.id, document=f'{name}.pdf', caption=cc1)
-                        await copy.copy(chat_id = -1002057338886)
+                        
                         count += 1
                         os.remove(f'{name}.pdf')
                     except FloodWait as e:
