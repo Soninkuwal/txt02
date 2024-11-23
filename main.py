@@ -9,7 +9,7 @@ from pyrogram.errors import FloodWait
 from pyromod import listen
 from pyrogram.types import Message
 from pyrogram import Client, filters
-from config import API_ID, API_HASH, BOT_TOKEN ADMINS OWNER 
+from config import API_ID, API_HASH, BOT_TOKEN, ADMINS, OWNER 
 from p_bar import progress_bar
 from subprocess import getstatusoutput
 from aiohttp import ClientSession
